@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TextDisplayComponent } from './text-display/text-display.component';
 import { FormattersComponent } from './formatters/formatters.component';
+import { FormatterComponent } from './formatter/formatter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     TextDisplayComponent,
-    FormattersComponent
+    FormattersComponent,
+    FormatterComponent
   ],
   imports: [
     BrowserModule,
