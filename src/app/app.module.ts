@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { TextDisplayComponent } from './text-display/text-display.component'; 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { TextDisplayComponent } from './text-display/text-display.component';
+  
 import { FormattersComponent } from './formatters/formatters.component';
-import { FormatterComponent } from './formatter/formatter.component';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    TextDisplayComponent,
+    
     FormattersComponent,
-    FormatterComponent
+    TextDisplayComponent
+
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
