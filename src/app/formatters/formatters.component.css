@@ -1,0 +1,21 @@
+.formatters-container{
+    display: flex;
+    flex-direction: columns;
+    gap:10px;
+    background-color: whitesmoke;
+    padding:10px;
+}
+
+.count-box{
+    background-color: #999;
+    padding: 10px;
+    color: white;
+}
+.button-box, .style-box{
+    display:flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+button{
+    padding: 5px 10px;
+}

@@ -1,1 +1,24 @@
-<p>formatters works!</p>
+<div class="formatters-container">
+    <div class="Count-box">
+        <p><b>Word Count: </b>{{wordCount}} Words</p>
+        <p><b>Char Count: </b>{{charCount}} Chars</p>
+    </div>
+
+    <div class="button-box">
+        <button (click)="clearText()">Clear All</button>
+        <button (click)="removeExtraSpaces()">Remove White-space </button>
+        <button (click)="reverseText()">Reverse Text</button>
+        <button (click)="removeSpecialChar()">Remove Special Char</button>
+        <button (click)="clearStyling()">Remove Styling</button>
+        <button (click)="capitalizeWords()">Captalize Word</button>
+    </div>
+
+    <div class="style-box">
+    <button (click)="toggleBold()">B</button>
+    <button (click)="toggleItalic()">I</button>
+    <button (click)="toggleUnderline()">U</button>
+    <input type="color" (input)="changeColor($event)">
+    <button (click)="increaseFontSize()">+</button>
+    <button (click)="decreaseFontSize()">-</button>
+  </div>
+</div>
