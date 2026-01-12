@@ -2,11 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {TextService} from '../services/text.service';
 
 @Component({
-  selector: 'app-text=display',
-  templateUrl: '/.text-display.component.html'
+   selector: 'app-text-display',
+  templateUrl: './text-display.component.html',  
+  styleUrls: ['./text-display.component.css'] 
 })
 
-export class TextDisplayComponent implements onInit{
+export class TextDisplayComponent implements OnInit{
   text= '';
   wordCount=0;
   charCount=0;
@@ -24,4 +25,6 @@ export class TextDisplayComponent implements onInit{
   onTextChange(value: string){
     this.textservice.updateText(value);
   }
+
+
 }

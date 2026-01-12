@@ -1,28 +1,48 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
+
 @Injectable({
-  providedIn:'root'
+  providedIn: 'root'
 })
+export class TextService {
+   private textSource = new BehaviorSubject<string>('');
+    text$ = this.textSource.asObservable();
+  constructor() { }
 
-export class TextService{
-    private textSubject=new BehaviorSubject<string>('');
+updateText(value: string){
+  this.textSource.next(value)
+}
 
-    text$=this.textSubject.asObservable();
+  // Returns number of words
+getWordCount(text: string): number {
+    return text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+  }
 
-    updateText(text: string){
-      this.textSubject.next(text);
-    }
+  // Returns number of characters
+getCharCount(text: string): number {
+    return text.length;
+  }
 
-    cleartext(){
-      this.textSubject.next('');
-    }
+  // Returns cleared text
+clearText(): string {
+    return '';
+  }
 
-    getWordCount(text:string): number{
-      return text? text.trim().split(/\s+/).length:0;
-    }
+  // Removing extra spaces
+removeExtraSpaces(text: string): string {
+    return text.replace(/\s+/g, ' ').trim();
+  }
 
-    getCharCount(text: string): number{
-      return text.length;
-    }
+  // Remove special characters
+removeSpecialChar(text: string): string {
+    return text.replace(/[^a-zA-Z0-9 ]/g, '');
+  }
+
+  // Capitalize words
+capitalizeWords(text: string): string {
+  
+   return text.toUpperCase();
+}
+
 }

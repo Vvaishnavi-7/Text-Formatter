@@ -3,35 +3,52 @@ import { TextService } from '../services/text.service';
 
 @Component({
   selector: 'app-formatters',
-  templateUrl: './formatters.component.html'
+  templateUrl: './formatters.component.html',
+  styleUrls: ['./formatters.component.css']
 })
 export class FormattersComponent {
+  text: string = '';
+  wordCount: number = 0;
+  charCount: number = 0;
 
-  text = '';   // ✅ ADD THIS
+  fontSize: number = 14;
+  isBold: boolean = false;
+  isItalic: boolean = false;
+  isUnderline: boolean = false;
+  color: string = '#000000';
 
-  constructor(private textService: TextService) {
-    this.textService.text$.subscribe(value => this.text = value);
+  constructor(private textService: TextService) {}
+
+  updateCounts() {
+    this.wordCount = this.textService.getWordCount(this.text);
+    this.charCount = this.textService.getCharCount(this.text);
   }
 
-  clearAll() {
-    this.textService.clearText();
+  clearText() {
+    this.text = this.textService.clearText();
+    this.updateCounts();
   }
 
-  removeWhitespace() {
-    this.textService.updateText(
-      this.text.replace(/\s+/g, ' ').trim()
-    );
+  removeExtraSpaces() {
+    this.text = this.textService.removeExtraSpaces(this.text);
+    this.updateCounts();
   }
 
-  reverseText() {
-    this.textService.updateText(
-      this.text.split('').reverse().join('')
-    );
+  removeSpecialChar() {
+    this.text = this.textService.removeSpecialChar(this.text);
+    this.updateCounts();
   }
 
-  capitalizeWord() {
-    this.textService.updateText(
-      this.text.replace(/\b\w/g, c => c.toUpperCase())
-    );
+  capitalizeWords() {
+    this.text = this.textService.capitalizeWords(this.text);
+    this.updateCounts();
   }
+
+  // Styling functions
+  toggleBold() { this.isBold = !this.isBold; }
+  toggleItalic() { this.isItalic = !this.isItalic; }
+  toggleUnderline() { this.isUnderline = !this.isUnderline; }
+  changeColor(event: any) { this.color = event.target.value; }
+  increaseFontSize() { this.fontSize += 2; }
+  decreaseFontSize() { this.fontSize -= 2; }
 }
