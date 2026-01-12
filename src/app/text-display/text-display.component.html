@@ -1,1 +1,14 @@
-<p>text-display works!</p>
+<lable>Type Text: </lable>
+
+<textarea
+    [(ngModel)]="text"
+    (input)="onTextChange(text)">
+</textarea>
+
+<lable>Output: </lable>
+<textarea
+     [value]="text" readonly>
+</textarea>
+
+<p><b>Word Count: </b>{{wordCount}} Words</p>
+<p><b>Char Count: </b>{{charCount}} chars</p>
