@@ -1,70 +1,50 @@
-<!-- <textarea [(ngModel)]="text" (input)="updateCounts()" 
-          [style.font-weight]="isBold ? 'bold' : 'normal'"
-          [style.font-style]="isItalic ? 'italic' : 'normal'"
-          [style.text-decoration]="isUnderline ? 'underline' : 'none'"
-          [style.color]="color"
-          [style.font-size.px]="fontSize">
-</textarea>
+<div class="container">
+    <h2 class="header">Text Formatter</h2>
 
-<p><b>Word Count: </b>{{wordCount}} Words</p>
-<p><b>Char Count: </b>{{charCount}} Chars</p>
+    <div class="main-content">
+        
+        <div class="text-section">
+            <div class="input-box">
+                <label>Type Text :-</label>
+                <textarea [(ngModel)]="text" (input)="updateCounts()"></textarea>
+            </div>
 
-<button (click)="clearText()">Clear All</button>
-<button (click)="removeExtraSpaces()">Remove White-space</button>
-<button (click)="removeSpecialChar()">Remove Special Char</button>
-<button (click)="capitalizeWords()">Capitalize Words</button>
-
-<button (click)="toggleBold()">B</button>
-<button (click)="toggleItalic()">I</button>
-<button (click)="toggleUnderline()">U</button>
-<input type="color" (input)="changeColor($event)">
-<button (click)="increaseFontSize()">+</button>
-<button (click)="decreaseFontSize()">-</button> -->
-
-
-<div class=" container">
-    <h2 class=""header>Text Formatter</h2>
-    <div class=""text-section>
-        <div class="input-box">
-            <label>Type Text: </label>
-            <textarea 
-                [(ngModel)]="text" (input)="updateCounts()">
-            </textarea>
-        </div>
-
-        <div class="output-box">
-            <label>Output Text: </label>
-            <textarea [value]="text"
-                    [style.font-weight]="isBold ? 'bold' : 'normal' "
+            <div class="output-box">
+                <label>Output Text :-</label>
+                <textarea
+                    [value]="text"
+                    [style.font-weight]="isBold ? 'bold' : 'normal'"
                     [style.font-style]="isItalic ? 'italic' : 'normal'"
                     [style.text-decoration]="isUnderline ? 'underline' : 'none'"
                     [style.color]="color"
                     [style.font-size.px]="fontSize"
                     readonly>
-            </textarea>
-        </div>
-    </div>
-
-    <div class="sidebar">
-        <div class="counts">
-            <p><b>Word Count: </b>{{wordCount}} Words</p>
-            <p><b>Char Count: </b>{{charCount}} Chars</p>
+                </textarea>
+            </div>
         </div>
 
-        <div class="controls">
-            <button (click)="clearText()">Clear All</button>
-            <button (click)="removeExtraSpaces()">Remove White-space</button>
-            <button (click)="removeSpecialChar()">Remove Special Char</button>
-            <button (click)="capitalizeWords()">Capitalize Words</button>
+        
+        <div class="sidebar">
+            <div class="counts">
+                <p><b>Word Count:</b> {{wordCount}} Words</p>
+                <p><b>Char Count:</b> {{charCount}} Chars</p>
+            </div>
 
-        <div class="text-style">
-            <button (click)="toggleBold()">B</button>
-            <button (click)="toggleItalic()">I</button>
-            <button (click)="toggleUnderline()">U</button>
-            <input type="color" (input)="changeColor($event)">
-            <button (click)="increaseFontSize()">+</button>
-            <button (click)="decreaseFontSize()">-</button> 
+            <div class="controls">
+                <button (click)="clearText()">Clear All</button>
+                <button (click)="removeExtraSpaces()">Remove White-space </button>
+                <button (click)="removeSpecialChar()">Remove Special Char</button>
+                <button (click)="capitalizeWords()">Capitalize Word</button>
+
+                <div class="text-style">
+                    <button (click)="toggleBold()">B</button>
+                    <button (click)="toggleItalic()">I</button>
+                    <button (click)="toggleUnderline()">U</button>
+                    <input type="color" (input)="changeColor($event)">
+                    <button (click)="increaseFontSize()">+</button>
+                    <button (click)="decreaseFontSize()">-</button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 </div>

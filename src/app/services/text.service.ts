@@ -12,9 +12,10 @@ export class TextService {
 
 updateText(value: string){
   this.textSource.next(value)
+  
 }
 
-  // Returns number of words
+  
 getWordCount(text: string): number {
     return text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
   }
