@@ -1,0 +1,42 @@
+.formatter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #d3d3d3; 
+  padding: 15px;
+  border-radius: 5px;
+}
+
+
+.count-box {
+  background-color: gray;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.button-grid button {
+  padding: 8px;
+  font-size: 14px;
+}
+
+
+.style-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.style-buttons input[type="color"] {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+}

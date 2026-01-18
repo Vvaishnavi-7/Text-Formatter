@@ -1,0 +1,28 @@
+<div class="formatter-panel">
+
+  <div class="count-box">
+    <p>Word Count: {{ wordCount }} Words</p>
+    <p>Char Count: {{ charCount }} Chars</p>
+  </div>
+
+  <div class="button-grid">
+    <button (click)="clearAll()">Clear All</button>
+    <button (click)="removeWhiteSpace()">White-space Remove</button>
+
+    <button (click)="reverseAll()">Reverse All</button>
+    <button (click)="removeSpecialChars()">Remove Special Char</button>
+
+    <button (click)="removeStyling()">Remove styling</button>
+    <button (click)="capitalizeWords()">Capitalize Word</button>
+  </div>
+
+  <div class="style-bar">
+    <button (click)="toggleBold()">B</button>
+    <button (click)="toggleItalic()">I</button>
+    <button (click)="toggleUnderline()">U</button>
+    <input type="color" [(ngModel)]="textColor" (change)="applyStyle()" />
+    <button (click)="increaseSize()">+</button>
+    <button (click)="decreaseSize()">-</button>
+  </div>
+
+</div>

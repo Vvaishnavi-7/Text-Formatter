@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  background: #ffffff;
+  min-height: 100vh;
+}
+
+.page-wrapper {
+  width: 85%;             
+  max-width: 1200px;      
+  margin: 40px auto;      
+  
+  padding: 20px;
+}
+
+
+.title {
+   background: #e0e0e0;    
+  font-size: 28px;
+  font-weight: bold;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.home-container {
+  display: flex;
+  gap: 30px;
+  background: #ffffff;
+  padding: 20px;
+}
+
+app-text-display,
+app-formatter {
+  background: #dcdcdc;
+  padding: 20px;
+}
+
+app-text-display {
+  flex: 2;
+}
+
+app-formatter {
+  flex: 1;
+}
