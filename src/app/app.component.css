@@ -1,0 +1,15 @@
+.navbar{
+    background-color: gray;
+    height: 30px;
+    width: 60%;
+    row-gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a {
+  color: #f9fafb; /* Light text */
+  text-decoration: none;
+  font-weight: 500;
+  
+}

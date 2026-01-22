@@ -6,7 +6,7 @@ import { RemoveSpecialCharsPipe } from '../remove-special-chars.pipe';
   selector: 'app-formatter',
   templateUrl: './formatter.component.html',
   styleUrls: ['./formatter.component.css'],
-  providers: [RemoveSpecialCharsPipe] // provide pipe here
+  providers: [RemoveSpecialCharsPipe] // custome pipe for removing special characters
 })
 export class FormatterComponent {
   
@@ -21,7 +21,7 @@ export class FormatterComponent {
   textSize: number = 14; // px
 
   
-  textDisplayRef!: TextDisplayComponent;
+  textDisplayRef!: TextDisplayComponent;// check it no connection
 
   constructor(private specialCharPipe: RemoveSpecialCharsPipe) {}
 

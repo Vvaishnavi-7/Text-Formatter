@@ -1,0 +1,73 @@
+.api-container{
+    width:60%;
+    display: flex;
+    gap:20px;
+    padding: 20px;
+    background-color: #ccc;
+}
+
+.left-panel{
+    margin-top: 30px;
+    width:30%;
+    background-color: #ccc;
+}
+
+.left-panel input{
+    width: 70%;
+    padding: 8px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.menu-btn{
+    width: 60%;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+   background-color: white;
+}
+
+.btn-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+    flex-basis: 50%;
+    
+}
+
+.btn-group button{
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 4px;
+     background-color: gray;
+    color: white;
+}
+
+.create-btn{
+    flex-basis: 50%;
+}
+
+.right-panel{
+    width: 70%;
+    
+}
+.error-box{
+    margin-top: 10px ;
+    border: 1px solid #fcf9f9;
+    background-color:whitesmoke;
+    padding:10px;
+    min-height: 20px;
+    border-radius: 4px;
+    /* overflow-y: auto; */
+}
+.response-box{
+    border: 1px solid #ccc;
+    background-color:rgb(251, 229, 232);
+    padding:10px;
+    border-radius: 4px;
+    height: 200px;
+    /* overflow-y: auto; */
+}

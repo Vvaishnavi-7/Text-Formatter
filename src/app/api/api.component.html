@@ -1,0 +1,59 @@
+<div class="api-container">
+    <div class="left-panel">
+        <label>User Id: </label>
+        <input
+            type="number"
+            placeholder="Enter user Id"
+            [(ngModel)]="userId"
+        />
+
+
+        <button class="menu-btn"
+            *ngFor="let btn of menuButtons"
+            (click)="onMenuClick(btn)">
+            <strong>{{ btn }}</strong>
+        </button>
+
+        <div class="btn-group">
+            <button *ngFor="let btn of buttons"
+            (click)="onAction(btn)"
+            [class.create-btn]="btn === 'CREATE'"><strong>
+                {{ btn }}</strong>
+            </button>
+        </div>
+
+      <label><strong>Input Body:</strong> </label>
+        <input
+            type="text"
+            placeholder="Enter Name"
+            [(ngModel)]="newUser"
+        />
+    </div>
+
+     
+    <div class="right-panel">
+        
+        <h3>Error Message</h3>
+            <div class="error-box">
+                {{ errorMsg}}
+            </div>
+
+        <h3>Response Data</h3>
+        <div class="response-box">
+            <pre>{{responseData | json }}</pre>
+            <img
+                *ngIf="imageUrl"
+                [src]="imageUrl"
+                alt="Photos"
+                width="200"
+                />
+
+            <h3 *ngIf="successMsg" style="color: rgb(5, 80, 5)">
+                {{successMsg}}
+            </h3>
+        </div>
+
+        
+    </div>
+
+</div>

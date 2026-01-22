@@ -1,18 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { TextDisplayComponent } from './text-display/text-display.component';
-import { FormatterComponent } from './formatter/formatter.component';
+import { ApiComponent } from './api/api.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent,
-    children: [
-      { path: 'text-display', component: TextDisplayComponent },
-      { path: 'formatter', component: FormatterComponent }
-    ]
-  }
+  { path: '', component: HomeComponent },
+  { path: 'api', component: ApiComponent }
 ];
 
 @NgModule({
